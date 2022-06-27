@@ -1,0 +1,30 @@
+Fetch Rewards Coding Exercise - Backend Software Engineering
+
+This is a simple C# HTTP Server to handle adding, spending, and returning payer values and transactions.
+
+Description:
+This is a simple C# HTTP Server to handle adding, spending, and returning payer values and transactions.
+
+Add Points:
+* Add points to a payer
+* Request Format: { "payer": name, "points": number, "timestamp": date time string }
+* Returns a plain text string on success acknowledging the points were added 
+
+Spend Points:
+* Spend a payers points 
+* Format - { "points": number }
+* Returns Json object containing an array showing the payers and point values used to cover the cost
+* Return Format - [ { "payer": name, "points": number }, { "payer": name, "points": number }, …]
+
+Display all payer point values 
+* Get all of the accounts payers and their current point values
+* Format - {}
+* Returns Json object containing an array showing the payers and their point values
+* Return Format - [ { "payer": name, "points": number }, { "payer": name, "points": number }, …]
+
+Based on the specificaitons in the exercise outline when spending points it will use the chronologically oldest transactions first
+
+This project was built in Visual Studio, to run this project you will need and IDE that can build and run .NET/C# projects.
+As it currently stands the server will run on localhost port 8000, if this needs to be changed it can be modified on line 15 of the RewardsDriver.cs file.
+
+To test the server I used the Talend API Tester extension for chrome with "http://localhost:8000/" as the host and "application/json" as the content type.
